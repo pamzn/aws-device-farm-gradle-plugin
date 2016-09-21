@@ -22,6 +22,12 @@ import com.amazonaws.services.devicefarm.model.TestType
  */
 abstract class ConfiguredTest {
 
+    Boolean appPerformanceMonitoring = true
+    Boolean videoRecording = true
+
+    void appPerformanceMonitoring(Boolean val) { appPerformanceMonitoring = val }
+    void videoRecording(Boolean val) { videoRecording = val }
+
     TestType testType
 
     /**

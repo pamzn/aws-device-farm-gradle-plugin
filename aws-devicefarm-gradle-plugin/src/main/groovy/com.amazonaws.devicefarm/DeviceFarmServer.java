@@ -93,6 +93,8 @@ public class DeviceFarmServer extends TestServer {
 
         final ScheduleRunTest runTest= new ScheduleRunTest()
                 .withParameters(extension.getTest().getTestParameters())
+                .addParametersEntry("app_performance_monitoring", String.valueOf(extension.getTest().getAppPerformanceMonitoring()))
+                .addParametersEntry("video_recording", String.valueOf(extension.getTest().getVideoRecording()))
                 .withType(extension.getTest().getTestType())
                 .withFilter(extension.getTest().getFilter())
                 .withTestPackageArn(uploadTestPackageIfNeeded(project, testPackage));
